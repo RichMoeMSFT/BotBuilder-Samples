@@ -20,7 +20,7 @@ bot.dialog('/', function (session) {
 
     // Create and send attachment
     var attachment = {
-        contentUrl: 'https://docs.botframework.com/en-us/images/faq-overview/botframework_overview_july.png',
+        contentUrl: 'https://d1yn1kh78jj1rr.cloudfront.net/previews1/free-sample-stamp_MJl0grOu.jpg',
         contentType: 'image/png',
         name: 'BotFrameworkOverview.png'
     };
