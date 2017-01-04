@@ -15,12 +15,23 @@ var connector = new builder.ChatConnector({
 var bot = new builder.UniversalBot(connector);
 server.post('/api/messages', connector.listen());
 
+bot.dialog('/', [
+    function (session) {
+        builder.Prompts.attachment(session, "Upload a picture");
+    },
+    function (session, results) {
+        if (results.response) {
+         session.send('got something');
+        }
+    }
+]);
+/*
 // Bot dialog
 bot.dialog('/', function (session) {
 
     // Create and send attachment
     var attachment = {
-        contentUrl: 'https://d1yn1kh78jj1rr.cloudfront.net/previews1/free-sample-stamp_MJl0grOu.jpg',
+        contentUrl: 'https://docs.botframework.com/en-us/images/faq-overview/botframework_overview_july.png',
         contentType: 'image/png',
         name: 'BotFrameworkOverview.png'
     };
@@ -30,3 +41,4 @@ bot.dialog('/', function (session) {
 
     session.send(msg);
 });
+*/
